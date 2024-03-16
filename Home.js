@@ -24,7 +24,6 @@ import theme from './Theme';
 import EmailUs from './Email';
 import ContactUs from './Contact';
 import BillBoard from './Billboard';
-import axios from 'axios';
 import AsyncStorage from '@react-native-async-storage/async-storage';
 import NavigationBar from '../NavigationHeader';
 import { assets } from '../../assets';
@@ -177,7 +176,7 @@ class Home extends Component {
   fetchData = async () => {
     console.log('Fetching data...');
     try {
-      const response = await axios.get('https://www.jsonkeeper.com/b/2B80');
+      const response = await fetch('https://www.jsonkeeper.com/b/2B80');
       if (!response.ok) {
         throw new Error('Network response was not ok');
       }
